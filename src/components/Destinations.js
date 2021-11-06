@@ -32,7 +32,7 @@ export default function Destinations(props) {
 
 
     return (
-        <DestinationStyled>
+        <DestinationStyled> 
             <div className="container">
                 <h5><p>01</p> PICK YOUR DESTINATION</h5>
                 <div className="content">

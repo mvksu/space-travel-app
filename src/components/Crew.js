@@ -33,7 +33,7 @@ export default function Crew(props) {
     return (
         <CrewStyled>
             <div className="container">
-                <h5><p>01</p> Meet your crew</h5>
+                <h5><p>02</p> Meet your crew</h5>
                 <div className="text-box">
                     <h4>{member ? member.role : ''}</h4>
                     <h3>{member ? member.name : ''}y</h3>
@@ -72,7 +72,7 @@ const CrewStyled = styled.section`
             }
         .text-box {
             width: 40%;
-            margin-top: 10rem;
+            margin-top: 5rem;
             h4 {
             color: #979797;
             }
@@ -80,9 +80,9 @@ const CrewStyled = styled.section`
                 padding: 30px 0;
             }
             nav {
-                margin-top: 150px;
-                height: 50px;
                 display: flex;
+                position: absolute;
+                bottom: 45px;
                 .sr-only {
                     width: 15px;
                     height: 15px;
@@ -99,7 +99,7 @@ const CrewStyled = styled.section`
         img {
             position: absolute;
             bottom: 0;
-            right: 25rem;
+            right: 15rem;
         }  
     }
 `

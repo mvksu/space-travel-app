@@ -25,6 +25,10 @@ const GlobalStyle = createGlobalStyle`
         font-size: 1.3rem;
         font-weight: lighter;
     }
+    button {
+        text-decoration: none;
+        outline: none;
+    }
 
     h1 {
         font-size: 150px;

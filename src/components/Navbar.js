@@ -11,13 +11,23 @@ export default function Navbar() {
                 <ul>
                     <NavLink to="/"
                         className="nav-text link"
-                        activeclassName="active"><p>00</p> Home</NavLink>
+                        activeclassName="active"
+                        isActive={(match) => {
+                            if (match) {
+                              return true;
+                            }
+                          }}><p>00</p> Home</NavLink>
                     <NavLink to="/destinations/moon"
                         className="nav-text link"
                         activeclassName="active"><p>01</p> Destination</NavLink>
                     <NavLink to="/crew/douglas"
                         className="nav-text link"
-                        activeclassName="active"><p>02</p> Crew</NavLink>
+                        activeclassName="active"
+                        isActive={(match) => {
+                            if (match) {
+                              return true;
+                            }
+                          }}><p>02</p> Crew</NavLink>
                     <NavLink to="/tech"
                         className="nav-text link"
                         activeclassName="active"><p>03</p> Technology</NavLink>

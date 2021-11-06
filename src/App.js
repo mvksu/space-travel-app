@@ -6,11 +6,13 @@ import Crew from './components/Crew';
 import Tech from './components/Tech';
 
 function App() {
-  return (
+  return (                        
     <Router>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />}>
+        </Route>
+        <Route path="/destinations" element={<Destinations planet="Moon"/>}>
         </Route>
         <Route path="/destinations/moon" element={<Destinations planet="Moon"/>}>
         </Route>
@@ -19,6 +21,8 @@ function App() {
         <Route path="/destinations/europa" element={<Destinations planet="Europa"/>}>
         </Route>
         <Route path="/destinations/titan" element={<Destinations planet="Titan"/>}>
+        </Route>
+        <Route path="/crew" element={<Crew member="Douglas Hurley"/>}>
         </Route>
         <Route path="/crew/douglas" element={<Crew member="Douglas Hurley"/>}>
         </Route>
