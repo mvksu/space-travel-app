@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useState } from "react/cjs/react.development";
 import styled from "styled-components";
-import background from '../assets/technology/background-technology-desktop.jpg';
+import background1 from '../assets/technology/background-technology-desktop.jpg';
+import background2 from '../assets/technology/background-technology-tablet.jpg';
 import img1 from '../assets/technology/image-launch-vehicle-portrait.jpg';
 import img2 from '../assets/technology/image-space-capsule-portrait.jpg';
 import img3 from '../assets/technology/image-spaceport-portrait.jpg';
@@ -55,12 +56,12 @@ export default function Tech() {
 }
 
 const TechStyled = styled.section`
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    background: url(${background}) no-repeat center center fixed;
+    background: url(${background1}) no-repeat center center fixed;
     background-size: cover;
     .container {
-        padding: 15rem 0 0 20rem;
+        padding: 12rem 0 4rem 8rem;
         h5 {
                 display: flex;
                 color: white;
@@ -78,11 +79,12 @@ const TechStyled = styled.section`
             .content-2 {
                 display: flex; 
                 flex-direction: row;
+                align-items: center;
                 margin-top: 5rem;
                 .switch-box {
                     display: flex;
                     flex-direction: column;
-                    margin-right: 5rem;
+                    margin-right: 2rem;
                 button {
                     height: 100px;
                     width: 100px;
@@ -111,9 +113,82 @@ const TechStyled = styled.section`
             }
             }
             img {
+                width: 40%;
                 height: 100%;
+                max-width: 100%;
                 align-self: flex-end;
+                margin-left: 35px;
             }  
+        }
+    }
+    @media (max-width: 1000px) {
+        height: 100%;
+        width: 100%;
+        background: url(${background2}) no-repeat center center fixed;
+        background-size: cover;
+        .container {
+            padding: 12rem 0 2rem 0;
+            h5 {
+                    display: flex;
+                    justify-content: center;
+                    color: white;
+                    font-weight: 100;
+                    margin-bottom: 25px;
+                    p {
+                        color: #979797;
+                        margin-right: 15px;
+                        font-weight: bold;
+                    }
+                }
+            .content {
+                display: flex;
+                flex-direction: column-reverse;
+                .content-2 {
+                    margin-top: 2rem;
+                    display: flex; 
+                    flex-direction: column;
+                    text-align: center;
+                    width: 100%;
+                    h5 {
+                        text-align: center;
+                    }
+                    .switch-box {
+                        display: flex;
+                        flex-direction: row;
+                        padding: 2rem 0;
+                    button {
+                        height: 100px;
+                        width: 100px;
+                        border-radius: 50%;
+                        background-color: transparent;
+                        border: 1px solid grey;
+                        margin: 15px;
+                        color: white;
+                        font-size: 37px;
+                        font-family: inherit;
+                        cursor: pointer;
+                        &:hover {
+                        border: 2px solid white;
+                        }
+                    }
+                    .active {
+                        color: var(--dark-main);
+                        background-color: white;
+                    }
+                }
+                .text-box {
+                    width: 80%;
+                    h5 {
+                    color: var(--light-violet);
+                    }
+                }
+                }
+                img {
+                    width: 100%;
+                    height: 400px;
+                    max-width: 100%;
+                }  
+            }
         }
     }
 `

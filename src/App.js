@@ -12,15 +12,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}>
         </Route>
-        <Route path="/destinations" element={<Destinations planet="Moon"/>}>
+        <Route path="/destinations" element={<Destinations/>}>
         </Route>
-        <Route path="/destinations/moon" element={<Destinations planet="Moon"/>}>
-        </Route>
-        <Route path="/destinations/mars" element={<Destinations planet="Mars"/>}>
-        </Route>
-        <Route path="/destinations/europa" element={<Destinations planet="Europa"/>}>
-        </Route>
-        <Route path="/destinations/titan" element={<Destinations planet="Titan"/>}>
+        <Route path="/destinations/:name" element={<Destinations/>}>
         </Route>
         <Route path="/crew" element={<Crew member="Douglas Hurley"/>}>
         </Route>

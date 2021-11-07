@@ -1,34 +1,40 @@
 import styled from "styled-components";
-import background from '../assets/destination/background-destination-desktop.jpg';
+import background1 from '../assets/destination/background-destination-desktop.jpg';
+import background2 from '../assets/destination/background-destination-tablet.jpg';
+import background3 from '../assets/destination/background-destination-mobile.jpg';
 import moon from '../assets/destination/image-moon.png';
 import mars from '../assets/destination/image-mars.png';
 import europa from '../assets/destination/image-europa.png';
 import titan from '../assets/destination/image-titan.png';
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams, useNavigate } from "react-router-dom";
 import data from "../data.json";
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
 
 export default function Destinations(props) {
     const [planet, setPlanet] = useState(null)
+    let { name } = useParams()
+    let navigate = useNavigate()
 
     function imgSwitcher(name) {
         switch (name) {
-            case 'Moon':
+            case 'moon':
                 return moon;
-            case 'Mars':
+            case 'mars':
                 return mars;
-            case 'Europa':
+            case 'europa':
                 return europa;
-            case 'Titan':
+            case 'titan':
                 return titan;
             default:
                 break;
         }
     }
     useEffect(() => {
-        console.log(planet)
-        setPlanet(data.destinations.find(x => x.name === props.planet))
-    }, [planet, props])
+        setPlanet(data.destinations.find(x => x.name.toLowerCase() === name))
+    }, [name])
+    useEffect(() => {
+        navigate('/destinations/moon')
+    }, [])
 
 
     return (
@@ -37,7 +43,7 @@ export default function Destinations(props) {
                 <h5><p>01</p> PICK YOUR DESTINATION</h5>
                 <div className="content">
                     <div className="left">
-                        <img src={imgSwitcher(props.planet)} alt="" />
+                        <img src={imgSwitcher(name)} alt="" />
                     </div>
                     <div className="right">
                         <nav>
@@ -76,10 +82,10 @@ export default function Destinations(props) {
 const DestinationStyled = styled.section`
     height: 100vh;
     width: 100%;
-    background: url(${background}) no-repeat center center fixed;
+    background: url(${background1}) no-repeat center center fixed;
     background-size: cover;
     .container {
-        padding: 15rem 20rem 0;
+        padding: 10rem 8rem 0;
         h5 {
                 display: flex;
                 color: white;
@@ -96,10 +102,12 @@ const DestinationStyled = styled.section`
             justify-content: space-around;
             padding: 3rem;
             .left {
-                width: 50%;
+                img {
+                    max-width: 100%;
+                }
             }
             .right {
-                width: 50%;
+                width: 70%;
                 padding: 0 3rem;
                 nav {
                     display: flex;
@@ -133,5 +141,144 @@ const DestinationStyled = styled.section`
             
         }
     }
+}
+@media (max-width: 1000px) {
+    height: 100%;
+    width: 100%;
+    background: url(${background2}) no-repeat center center fixed;
+    background-size: cover;
+    .container {
+        padding: 12rem 4rem 0;
+        h5 {
+                display: flex;
+                justify-content: center;
+                color: white;
+                font-weight: 100;
+                margin-bottom: 25px;
+                p {
+                    color: #979797;
+                    margin-right: 15px;
+                    font-weight: bold;
+                }
+            }
+        .content {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .left {
+                width: 100%;
+                text-align: center;
+                margin: 35px 0;
+            }
+            .right {
+                padding: 0;
+                text-align: center;
+                width: 100%;
+                nav {
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 30px;
+                    .link {
+                        display: flex;
+                        color: white;
+                        height: 30px;
+                        margin: 0 15px;
+                        &:hover {
+                            border-bottom: 2px solid lightgrey;
+                        }
+                    }
+                    .active {
+                            border-bottom: 2px solid white;
+                        }
+                }
+                .data {
+                    display: flex;
+                    justify-content: space-around;
+                    margin-top: 40px;
+                    padding-top: 30px;
+                    padding-bottom: 30px;
+                    border-top: 1px solid #979797;
+                    div {
+                        margin: 0;
+                        h2 {
+                            color: var(--light-violet);
+                            margin-bottom: 15px;
+                        }
+                    }
+                }       
+            
+        }
+    }
+}
+}
+@media (max-width: 500px) {
+    height: 100%;
+    width: 100%;
+    background: url(${background3}) no-repeat center center fixed;
+    background-size: cover;
+    .container {
+        padding: 10rem 2rem 0;
+        h5 {
+                display: flex;
+                color: white;
+                font-weight: 100;
+                margin-bottom: 25px;
+                p {
+                    color: #979797;
+                    margin-right: 15px;
+                    font-weight: bold;
+                }
+            }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            .left {
+                width: 50%;
+                text-align: center;
+            }
+            .right {
+                padding: 0;
+                text-align: center;
+                width: 100%;
+                nav {
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 30px;
+                    .link {
+                        display: flex;
+                        color: white;
+                        height: 30px;
+                        margin: 0 15px;
+                        &:hover {
+                            border-bottom: 2px solid lightgrey;
+                        }
+                    }
+                    .active {
+                            border-bottom: 2px solid white;
+                        }
+                }
+                .data {
+                    display: flex;
+                    justify-content: space-around;
+                    margin-top: 40px;
+                    padding-top: 30px;
+                    border-top: 1px solid #979797;
+                    div {
+                        margin: 0;
+                        h2 {
+                            color: var(--light-violet);
+                            margin-bottom: 15px;
+                        }
+                    }
+                }       
+            
+        }
+    }
+}
 }
 `

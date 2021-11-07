@@ -15,8 +15,10 @@ const GlobalStyle = createGlobalStyle`
     body {
         color: white;
         font-family: 'Bellefair', sans-serif;
-        max-height: 100vh;
+        min-height: 100vh;
         text-transform: uppercase;
+        background-size: cover;
+        background-position: bottom center;
     }
     b {
         font-family: 'Barlow Condensed', sans-serif;
