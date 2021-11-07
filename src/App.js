@@ -16,15 +16,9 @@ function App() {
         </Route>
         <Route path="/destinations/:name" element={<Destinations/>}>
         </Route>
-        <Route path="/crew" element={<Crew member="Douglas Hurley"/>}>
+        <Route path="/crew" element={<Crew/>}>
         </Route>
-        <Route path="/crew/douglas" element={<Crew member="Douglas Hurley"/>}>
-        </Route>
-        <Route path="/crew/mark" element={<Crew  member="Mark Shuttleworth"/>}>
-        </Route>
-        <Route path="/crew/glover" element={<Crew  member="Victor Glover"/>}>
-        </Route>
-        <Route path="/crew/anousheh" element={<Crew  member="Anousheh Ansari"/>}>
+        <Route path="/crew/:name" element={<Crew />}>
         </Route>
         <Route path="/tech" element={<Tech />}>
         </Route>

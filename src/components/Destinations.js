@@ -80,12 +80,12 @@ export default function Destinations(props) {
 }
 
 const DestinationStyled = styled.section`
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background: url(${background1}) no-repeat center center fixed;
     background-size: cover;
     .container {
-        padding: 10rem 8rem 0;
+        padding: 10rem 8rem 15rem;
         h5 {
                 display: flex;
                 color: white;

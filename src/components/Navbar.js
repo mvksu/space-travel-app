@@ -1,58 +1,111 @@
 import styled from "styled-components";
 import logo from "../assets/shared/logo.svg";
 import hamburger from "../assets/shared/icon-hamburger.svg";
+import close from "../assets/shared/icon-close.svg";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
     <NavbarStyled>
       <img src={logo} alt="" />
       <div className="blurredBox">
-        <div className="line"></div>
-        <ul>
-          <NavLink
-            to="/"
-            className="nav-text link"
-            activeclassName="active"
-          >
-            <p>00</p> Home
-          </NavLink>
-          <NavLink
-            to="/destinations"
-            className="nav-text link"
-            activeclassName="active"
-            isActive={(match) => {
+          <div className="line"></div>
+          <ul>
+            <NavLink to="/" className="nav-text link" activeclassName="active" onClick={() => setOpen(false)}>
+              <p>00</p> Home
+            </NavLink>
+            <NavLink
+              to="/destinations"
+              className="nav-text link"
+              activeclassName="active"
+              isActive={(match) => {
                 if (match) {
                   return true;
                 }
               }}
-          >
-            <p>01</p> Destination
-          </NavLink>
-          <NavLink
-            to="/crew"
-            className="nav-text link"
-            activeclassName="active"
-            isActive={(match) => {
-              if (match) {
-                return true;
-              }
-            }}
-          >
-            <p>02</p> Crew
-          </NavLink>
-          <NavLink
-            to="/tech"
-            className="nav-text link"
-            activeclassName="active"
-          >
-            <p>03</p> Technology
-          </NavLink>
-        </ul>
-      </div>
-      <button>
-        <img src={hamburger} alt="" className="hamburger" />
-      </button>
+              onClick={() => setOpen(false)}
+            >
+              <p>01</p> Destination
+            </NavLink>
+            <NavLink
+              to="/crew"
+              className="nav-text link"
+              activeclassName="active"
+              isActive={(match) => {
+                if (match) {
+                  return true;
+                }
+              }}
+              onClick={() => setOpen(false)}
+            >
+              <p>02</p> Crew
+            </NavLink>
+            <NavLink
+              to="/tech"
+              className="nav-text link"
+              activeclassName="active"
+              onClick={() => setOpen(false)}
+            >
+              <p>03</p> Technology
+            </NavLink>
+          </ul>
+        </div>
+      {open ? (
+        <div className="hamburgerMenu blurredBox">
+          <div className="line"></div>
+          <ul>
+            <NavLink to="/" className="nav-text link" activeclassName="active" onClick={() => setOpen(false)}>
+              <p>00</p> Home
+            </NavLink>
+            <NavLink
+              to="/destinations"
+              className="nav-text link"
+              activeclassName="active"
+              isActive={(match) => {
+                if (match) {
+                  return true;
+                }
+              }}
+              onClick={() => setOpen(false)}
+            >
+              <p>01</p> Destination
+            </NavLink>
+            <NavLink
+              to="/crew"
+              className="nav-text link"
+              activeclassName="active"
+              isActive={(match) => {
+                if (match) {
+                  return true;
+                }
+              }}
+              onClick={() => setOpen(false)}
+            >
+              <p>02</p> Crew
+            </NavLink>
+            <NavLink
+              to="/tech"
+              className="nav-text link"
+              activeclassName="active"
+              onClick={() => setOpen(false)}
+            >
+              <p>03</p> Technology
+            </NavLink>
+          </ul>
+        </div>
+      ) : null}
+      {!open ? (
+        <button onClick={() => setOpen(true)}>
+          <img src={hamburger} alt="" className="hamburger" />
+        </button>
+      ) : (
+        <button onClick={() => setOpen(false)}>
+          <img src={close} alt="" />
+        </button>
+      )}
     </NavbarStyled>
   );
 }
@@ -87,7 +140,7 @@ const NavbarStyled = styled.nav`
       align-items: center;
       height: 100%;
       padding: 0 100px;
-      backdrop-filter: blur(5px);
+      backdrop-filter: blur(25px);
       .active {
         border-bottom: 2px solid white;
       }
@@ -107,7 +160,7 @@ const NavbarStyled = styled.nav`
     }
   }
   button {
-      display: none;
+    display: none;
   }
   @media (max-width: 1000px) {
     .blurredBox {
@@ -125,16 +178,30 @@ const NavbarStyled = styled.nav`
   }
 
   @media (max-width: 550px) {
-    .blurredBox {
-      display: none;
+    .blurredBox { 
+        display: none;
+    }
+    .hamburgerMenu {
+      display: block;
+      position: absolute;
+      width: 70%;
+      height: 100vh;
+      top: 0;
+      right: 0;
+      ul {
+        display: flex;
+        flex-direction: column;
+        p {
+          display: block;
+        }
+      }
     }
     button {
-        border: none;
-        background: none;
-        cursor: pointer;
-    }
-    .hamburger {
+      border: none;
+      background: none;
+      cursor: pointer;
       display: block;
+      z-index: 100;
     }
   }
 `;

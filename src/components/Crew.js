@@ -5,25 +5,26 @@ import background3 from "../assets/crew/background-crew-mobile.jpg";
 import { NavLink } from "react-router-dom";
 import douglas from "../assets/crew/image-douglas-hurley.png";
 import mark from "../assets/crew/image-mark-shuttleworth.png";
-import glover from "../assets/crew/image-victor-glover.png";
+import victor from "../assets/crew/image-victor-glover.png";
 import anousheh from "../assets/crew/image-anousheh-ansari.png";
 import { useEffect, useState } from "react";
 import data from "../data.json";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 
 export default function Crew(props) {
   const [member, setMember] = useState(null);
   let navigate = useNavigate()
+  const { name } = useParams()
 
   function imgSwitcher(name) {
     switch (name) {
-      case "Mark Shuttleworth":
+      case "mark":
         return mark;
-      case "Douglas Hurley":
+      case "douglas":
         return douglas;
-      case "Victor Glover":
-        return glover;
-      case "Anousheh Ansari":
+      case "victor":
+        return victor;
+      case "anousheh":
         return anousheh;
       default:
         break;
@@ -31,8 +32,9 @@ export default function Crew(props) {
   }
 
   useEffect(() => {
-    setMember(data.crew.find((x) => x.name === props.member));
-  }, [props]);
+    console.log(name)
+    setMember(data.crew.find((x) => x.name.toLocaleLowerCase().split(' ')[0] === name));
+  }, [name]);
 
   useEffect(() => {
     navigate('/crew/douglas')
@@ -61,7 +63,7 @@ export default function Crew(props) {
                 activeclassName="active"
               ></NavLink>
               <NavLink
-                to="/crew/glover"
+                to="/crew/victor"
                 className="sr-only"
                 activeclassName="active"
               ></NavLink>
@@ -73,7 +75,7 @@ export default function Crew(props) {
             </nav>
           </div>
           <div className="imgbox">
-            <img src={imgSwitcher(props.member)} alt="" />
+            <img src={imgSwitcher(name)} alt="" />
           </div>
         </div>
       </div>
