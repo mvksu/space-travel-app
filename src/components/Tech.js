@@ -126,7 +126,7 @@ const TechStyled = styled.section`
         background: url(${background2}) no-repeat center center fixed;
         background-size: cover;
         .container {
-            padding: 10rem 0 2rem 0;
+            padding: 10rem 0 10rem;
             h5 {
                     display: flex;
                     justify-content: center;
