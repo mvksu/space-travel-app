@@ -3,13 +3,12 @@ import background1 from "./../assets/home/background-home-desktop.jpg"
 import background2 from "./../assets/home/background-home-tablet.jpg"
 import background3 from "./../assets/home/background-home-mobile.jpg"
 import { Link } from 'react-router-dom'
-import Blurry from "./Blurry"
+
 
 export default function Home(props) {
 
     return (
         <HomeStyled>
-            <Blurry/>
             {props.children}
             <div className="container">
                 <div className="left-content">

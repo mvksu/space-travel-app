@@ -204,13 +204,13 @@ const CrewStyled = styled.section`
         }
     }
   }
-  @media (max-width: 1000px) {
+  @media (max-width: 500px) {
     height: 100%;
     width: 100%;
     background: url(${background3}) no-repeat center center fixed;
     background-size: cover;
     .container {
-        padding: 12rem 4rem 0;
+        padding: 12rem 1rem 0;
         height: 100%;
         position: relative;
         h5 {

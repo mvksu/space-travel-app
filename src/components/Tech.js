@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useState } from "react/cjs/react.development";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import background1 from '../assets/technology/background-technology-desktop.jpg';
 import background2 from '../assets/technology/background-technology-tablet.jpg';
