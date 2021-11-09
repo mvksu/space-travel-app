@@ -168,9 +168,9 @@ const DestinationStyled = styled.section`
             align-items: center;
             justify-content: center;
             .left {
-                width: 100%;
+                width: 80%;
                 text-align: center;
-                margin: 35px 0;
+                margin: 10px 0 50px;
             }
             .right {
                 padding: 0;
@@ -219,7 +219,7 @@ const DestinationStyled = styled.section`
     background: url(${background3}) no-repeat center center fixed;
     background-size: cover;
     .container {
-        padding: 10rem 1rem 0;
+        padding: 10rem 2rem 0;
         h5 {
                 display: flex;
                 color: white;

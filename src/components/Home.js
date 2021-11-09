@@ -26,12 +26,12 @@ export default function Home(props) {
 
 
 const HomeStyled = styled.section`
-    height: 100;
+    height: 100vh;
     width: 100%;
     background: url(${background1}) no-repeat center center;
     background-size: cover;
     .container {
-        padding: 15rem 8rem 10rem;
+        padding: 15rem 8rem 0;
         display: flex;
         justify-content: space-between;
         .left-content {
@@ -101,11 +101,12 @@ const HomeStyled = styled.section`
         background: url(${background3}) no-repeat center center;
         background-size: cover;
         .container {
-            padding: 13rem 0 0;
+            padding: 10rem 1rem 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             .left-content {
+                width: 100%;
                 text-align: center;
                 h1 {
                     margin: 10px 0;
@@ -114,8 +115,8 @@ const HomeStyled = styled.section`
             .right-content {
                 margin: 35px 0 35px;
                 button {
-                    width: 280px;
-                    height: 280px;
+                    width: 200px;
+                    height: 200px;
                     border-radius: 100%;
                     border: none;
                     font-family: inherit;

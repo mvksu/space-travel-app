@@ -210,7 +210,7 @@ const CrewStyled = styled.section`
     background: url(${background3}) no-repeat center center fixed;
     background-size: cover;
     .container {
-        padding: 12rem 1rem 0;
+        padding: 12rem 2rem 2rem;
         height: 100%;
         position: relative;
         h5 {
@@ -235,7 +235,7 @@ const CrewStyled = styled.section`
                 text-align: center;
                 display: flex;
                 flex-direction: column;
-                padding: 15px 0 40px 0;
+                padding: 15px 0 0 0;
                 h4 {
                     color: #979797;
                 }
@@ -262,7 +262,8 @@ const CrewStyled = styled.section`
             }
             .imgbox {
                 order: -1;
-                width: 40%;
+                padding: 2rem 7rem 0;
+                width: 100%;
                 img {
                     max-width: 120%;
                     height: 100%;
