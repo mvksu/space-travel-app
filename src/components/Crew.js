@@ -262,10 +262,10 @@ const CrewStyled = styled.section`
             }
             .imgbox {
                 order: -1;
-                padding: 2rem 7rem 0;
+                padding: 2rem 2rem 0;
                 width: 100%;
                 img {
-                    max-width: 120%;
+                    max-width: 100%;
                     height: 100%;
                 }
             }
