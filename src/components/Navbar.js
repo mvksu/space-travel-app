@@ -129,10 +129,11 @@ const NavbarStyled = styled.nav`
     .line {
       position: absolute;
       border: 0.5px solid #979797;
-      width: 500px;
+      width: 40%;
       left: -450px;
       top: 50%;
       z-index: 100;
+      margin-left: 180px;
     }
     ul {
       display: flex;
@@ -183,7 +184,7 @@ const NavbarStyled = styled.nav`
     }
     .hamburgerMenu {
       display: block;
-      position: absolute;
+      position: fixed;
       width: 70%;
       height: 100vh;
       top: 0;
